@@ -1,0 +1,16 @@
+{
+  "name": "monitor",
+  "version": "1.0.0",
+  "main": "index.js",
+  "repository": "https://github.com/fedeghe/monitor.git",
+  "author": "fedeghe <fedeghe@gmail.com>",
+  "license": "MIT",
+  "scripts": {
+    "start": "malta source/build.json"
+  },
+  "devDependencies": {
+    "malta": "^4.1.28",
+    "malta-browser-refresh": "^1.2.15",
+    "malta-dev-srv": "^1.1.7"
+  }
+}

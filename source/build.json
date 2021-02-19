@@ -1,0 +1,9 @@
+{
+    "EXE": [
+        "rm -rf dist",
+        "mkdir dist"
+    ],
+    "source/monitor.js": "dist",
+    "source/style.css": "dist",
+    "source/index.html": "dist -plugins=malta-browser-refresh...malta-dev-srv[folder:'dist']"
+}

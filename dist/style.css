@@ -1,0 +1,42 @@
+body{
+    height:50000px;
+    background-image: url("https://www.w3schools.com/images/colorpicker.gif");
+    background-repeat: repeat;
+}
+.monitor-panel {
+    position: fixed;
+    bottom: 0px;
+    right: 0px;
+    width: 200px;
+    min-height: 100px;
+    /* border:3px dotted white; */
+    background-color: rgba(0,0,0,0.5);
+    z-index:1000;
+    padding:5px;
+    padding-bottom:0px;
+    border-top-left-radius:6px;
+    font-family:verdana;
+}
+
+.monitor-canvas {
+    width:200px;
+    height:100px;
+}
+.x-panel {
+    border-radius:3px;
+    margin-bottom:5px;
+    padding:5px;
+    color:greenyellow
+}
+.high-panel{
+    background-color: #220000;
+    height: 150px;
+}
+.mid-panel{
+    background-color: #002200;
+    height: 100px;
+}
+.small-panel{
+    background-color: #000022;
+    height: 50px;
+}
