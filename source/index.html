@@ -19,19 +19,33 @@
             var n = document.getElementById('add');
             n.addEventListener('click', addNode)
             function addNode() {
-                var n = document.createElement('div')
-                n.className="added"
+                var n = document.createElement('div'),
+                    remover = document.createElement('button');
+                remover.addEventListener('click', function _(){
+                    remover.removeEventListener('click', _)
+                    n.parentNode.removeChild(n)
+                })
+                n.className="added";
+                remover.innerText = 'remove'
                 n.innerHTML = +new Date
+                n.appendChild(remover)
                 document.body.appendChild(n)
             }
         </script>
         <script>
             window.addEventListener('load', function () {
-                Monitor.showFPS();
-                Monitor.showMEM();
-                Monitor.showTAGS();
-                Monitor.showEVENTS();
-                Monitor.render();
+                Monitor.showFPS()
+                    .showMEM()
+                    .showTAGS({
+                        frequency: 10,
+                    })
+                    .showEVENTS({
+                        frequency: 1,
+                        exclude: [
+                            'onmousemove',
+                        ]
+                    })
+                    .render();
             }, false);
         </script>
     </body>

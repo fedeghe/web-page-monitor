@@ -6,8 +6,9 @@ function Monitor() {
     this.panels = []
 }
 
-Monitor.prototype.addPanel = function (type) {
-    this.panels.push(PanelFactory(type))
+Monitor.prototype.addPanel = function (type, options) {
+    this.panels.push(PanelFactory(type, options));
+    return this;
 };
 
 Monitor.prototype.render = function (where) {

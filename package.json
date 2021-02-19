@@ -1,8 +1,9 @@
 {
-  "name": "monitor",
-  "version": "1.0.0",
-  "main": "index.js",
-  "repository": "https://github.com/fedeghe/monitor.git",
+  "name": "web-page-monitor",
+  "description": "Monitor some aspect of a web page",
+  "version": "0.0.1",
+  "main": "dist/index.js",
+  "repository": "https://github.com/fedeghe/web-page-monitor.git",
   "author": "fedeghe <fedeghe@gmail.com>",
   "license": "MIT",
   "scripts": {

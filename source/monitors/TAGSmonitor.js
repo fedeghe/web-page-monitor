@@ -1,6 +1,6 @@
 import BaseMonitor from './BaseMonitor';
 import {extend, createNode, appendTo} from './utils';
-function TAGSmonitor() {
+function TAGSmonitor(options = {}) {
     this.panel = createNode('div', {
         className: 'small-panel x-panel',
     });
@@ -18,7 +18,7 @@ function TAGSmonitor() {
     setInterval(function () {
         var l = document.getElementsByTagName('*').length;
         num.innerHTML = l
-    }, 500);
+    }, options.frequency ? 1000 / options.frequency : 1000);
 }
 extend(TAGSmonitor, BaseMonitor);
 export default TAGSmonitor

@@ -1,16 +1,60 @@
 import BaseMonitor from './BaseMonitor';
 import {extend, createNode, appendTo} from './utils';
 
-function EVENTSmonitor(){
+
+
+extend(EVENTSmonitor, BaseMonitor);
+function EVENTSmonitor(options = {}){
+    var self = this;
+    this.max = 0;
+    this.events = [];
+    this.options = options
 
     this.panel = createNode('div', {
-        className: 'high-panel x-panel',
+        className: 'small-panel x-panel',
     });
-    var title = createNode('span', {text: 'EVENTSmonitor: '}),
-        num = createNode('span');
+    this.$title = createNode('span', {text: 'EVENTSmonitor'});
+    this.$num = createNode('span');
 
+    appendTo(this.panel, [this.$title, this.$num]);
+    this.listen();
 
-    appendTo(this.panel, [title, num]);
+    setInterval(function () {
+        var current = self.events.length;
+        self.max = Math.max(self.max, current)
+        self.$num.innerHTML = ` (${current} | max:${self.max})`;
+        self.events = []
+    }, options.frequency ? 1000 / options.frequency : 1000)
+
 }
-extend(EVENTSmonitor, BaseMonitor);
+
+EVENTSmonitor.prototype.add = function (e) {
+    this.events.push(e)
+};
+EVENTSmonitor.prototype.listen = function () {
+    var self = this;
+    var t = Object.keys(window).reduce((acc,key) => {
+        if (/^on/.test(key)) {
+            acc.push(key)
+        }
+        return acc
+    }, [])
+    console.log(t.join(','))
+    Object.keys(window).forEach(key => {
+        
+        if ( /^on/.test(key)
+            && (
+                !self.options.exclude
+                || self.options.exclude.indexOf(key) < 0
+            )
+        ) {
+            window.addEventListener(key.slice(2), event => {
+                self.add(event);
+            }, true);
+        }
+    });
+}
+
+
+
 export default EVENTSmonitor;

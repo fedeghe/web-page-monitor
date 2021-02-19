@@ -14,6 +14,7 @@ function extend(Child, Parent) {
 function createNode(tag, {
     className = false,
     text = false,
+    html = false,
     attributes = {},
     childs = []
 } = {}) {
@@ -23,6 +24,9 @@ function createNode(tag, {
     }
     if (text) {
         n.innerText = text
+    }
+    if (html) {
+        n.innerHTML = html
     }
     childs.length && appendTo(n, childs)
     for (var attribute in attributes) {
@@ -40,5 +44,5 @@ function appendTo(node, childs) {
 export {
     extend,
     createNode,
-    appendTo
+    appendTo,
 }

@@ -1,6 +1,10 @@
 const path = require('path');
 const { CleanWebpackPlugin } = require('clean-webpack-plugin');
 const UglifyJsPlugin = require('uglifyjs-webpack-plugin');
+
+const webpack = require("webpack");
+const fs = require("fs");
+const packageInfo  = JSON.parse(fs.readFileSync('./package.json'))
  
 module.exports = {
   entry: {
@@ -12,9 +16,20 @@ module.exports = {
     libraryTarget: "commonjs-module"
   },
   optimization: {
-    minimizer: [new UglifyJsPlugin()],
-  },
+    minimize: true,
+    minimizer: [
+        new UglifyJsPlugin()
+    ]
+},
   plugins: [
+    new webpack.BannerPlugin(
+        fs.readFileSync(
+            path.resolve(__dirname + '/header.txt'),
+            'utf8'
+        ).replace('%AUTHOR%', packageInfo.author)
+        .replace('%NAME%', packageInfo.name)
+        .replace('%VERSION%', packageInfo.version)
+    ),
     new CleanWebpackPlugin({ cleanStaleWebpackAssets: false }),
   ],
   module: {

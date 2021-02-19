@@ -3,11 +3,12 @@ import './style.less'
 
 window.Monitor = (function() {
     var m = new Monitor();
-    return {
-        showFPS: () => m.addPanel('fps'),
-        showMEM: () => m.addPanel('mem'),
-        showTAGS: () => m.addPanel('tags'),
-        showEVENTS: () => m.addPanel('events'),
+    var out = {
+        showFPS: options => {m.addPanel('fps', options); return out;},
+        showMEM: options => {m.addPanel('mem', options); return out;},
+        showTAGS: options => {m.addPanel('tags', options); return out;},
+        showEVENTS: options => {m.addPanel('events', options); return out;},
         render: () => m.render(document.body),
     };
+    return out;
 })();
