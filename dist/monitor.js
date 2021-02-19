@@ -70,7 +70,15 @@ var Monitor = (function() {
     function TAGSmonitor(){
         this.panel = document.createElement('div');
         this.panel.className = 'small-panel x-panel';
-        this.panel.innerHTML = 'TAGSmonitor';
+        var title = document.createElement('span')
+        title.innerHTML = 'TAGSmonitor: ';
+        var num = document.createElement('span')
+        this.panel.appendChild(title)
+        this.panel.appendChild(num)
+        setInterval(function () {
+            var l = document.getElementsByTagName('*').length;
+            num.innerHTML = l
+        }, 500)
     }
     extend(FPSmonitor, BasePanel);
     extend(MEMmonitor, BasePanel);

@@ -6,8 +6,24 @@
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <script src="monitor.js"></script>
         <link rel="stylesheet" type="text/css" href="style.css">
+        <style>
+        .added {
+            background-color: white;
+            padding:5px;
+            margin-bottom:5px
+        }
+        </style>
     </head>
     <body>
+        <script>
+            function addNode() {
+                var n = document.createElement('div')
+                n.className="added"
+                n.innerHTML = +new Date
+                document.body.appendChild(n)
+            }
+        </script>
+        <button onClick="addNode()">add</button>
         <script>
             Monitor.showFPS();
             Monitor.showMEM();
