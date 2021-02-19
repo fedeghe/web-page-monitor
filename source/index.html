@@ -4,8 +4,6 @@
         <title>monitor</title>
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1">
-        <script src="monitor.js"></script>
-        <link rel="stylesheet" type="text/css" href="style.css">
         <style>
         .added {
             background-color: white;
@@ -23,12 +21,14 @@
                 document.body.appendChild(n)
             }
         </script>
-        <button onClick="addNode()">add</button>
+        <button style="position:fixed; top:0px; left: 0px" onClick="addNode()">add</button>
         <script>
-            Monitor.showFPS();
-            Monitor.showMEM();
-            Monitor.showTAGS();
-            Monitor.render();
+            window.addEventListener('load', function () {
+                Monitor.showFPS();
+                Monitor.showMEM();
+                Monitor.showTAGS();
+                Monitor.render();
+            }, false);
         </script>
     </body>
 </html>
