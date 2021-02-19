@@ -13,7 +13,11 @@
         </style>
     </head>
     <body>
+        
+        <button id="add" style="position:fixed; top:0px; left: 0px">add</button>
         <script>
+            var n = document.getElementById('add');
+            n.addEventListener('click', addNode)
             function addNode() {
                 var n = document.createElement('div')
                 n.className="added"
@@ -21,12 +25,12 @@
                 document.body.appendChild(n)
             }
         </script>
-        <button style="position:fixed; top:0px; left: 0px" onClick="addNode()">add</button>
         <script>
             window.addEventListener('load', function () {
                 Monitor.showFPS();
                 Monitor.showMEM();
                 Monitor.showTAGS();
+                Monitor.showEVENTS();
                 Monitor.render();
             }, false);
         </script>

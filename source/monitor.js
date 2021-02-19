@@ -7,7 +7,7 @@ function Monitor() {
 }
 
 Monitor.prototype.addPanel = function (type) {
-    this.panels.push(PanelFactory.create(type))
+    this.panels.push(PanelFactory(type))
 };
 
 Monitor.prototype.render = function (where) {

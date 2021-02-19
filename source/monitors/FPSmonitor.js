@@ -1,9 +1,10 @@
-import BaseMonitor from './BaseMonitor'
-import {extend} from './../utils'
+import BaseMonitor from './BaseMonitor';
+import {extend, createNode} from './utils';
 function FPSmonitor(){
-    this.panel = document.createElement('div');
-    this.panel.className = 'high-panel x-panel';
-    this.panel.innerHTML = 'FPSmonitor';
+    this.panel = createNode('div',{
+        className: 'high-panel x-panel',
+        text: 'FPSmonitor'
+    });
 }
 extend(FPSmonitor, BaseMonitor);
-export default FPSmonitor
+export default FPSmonitor;

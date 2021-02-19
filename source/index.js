@@ -1,38 +1,13 @@
-
-
-
+import Monitor from './Monitor'
 import './style.less'
 
-import Monitor from './Monitor'
-
-
 window.Monitor = (function() {
-
-
-
-    var m = new Monitor()
-
-    function showMEM(){
-        m.addPanel('mem');
-        
-    }
-    function showFPS(){
-        m.addPanel('fps');
-        
-    }
-    function showTAGS(){
-        m.addPanel('tags');
-       
-    }
-    function render(){
-        m.render(document.body)
-    }
-
-
+    var m = new Monitor();
     return {
-        showFPS,
-        showMEM,
-        showTAGS,
-        render,
-    }
+        showFPS: () => m.addPanel('fps'),
+        showMEM: () => m.addPanel('mem'),
+        showTAGS: () => m.addPanel('tags'),
+        showEVENTS: () => m.addPanel('events'),
+        render: () => m.render(document.body),
+    };
 })();

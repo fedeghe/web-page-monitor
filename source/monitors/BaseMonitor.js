@@ -1,9 +1,9 @@
 function BaseMonitor() {
-    this.appended = false
+    this.appended = false;
 }
 BaseMonitor.prototype.render = function (where) {
-    this.appended = true
-    where.appendChild(this.panel)
-}
+    this.appended = true;
+    where.appendChild(this.panel);
+};
 
-export default BaseMonitor
+export default BaseMonitor;
