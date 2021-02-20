@@ -6,7 +6,7 @@ function TAGSmonitor(options = {}) {
     this.$panel = createNode('div', {
         className: 'small-panel x-panel',
     });
-    var $title = createNode('div', {text: 'TAGSmonitor', className: 'title'}),
+    var $title = createNode('div', {text: 'TAGS', className: 'title'}),
         $num = createNode('span'),
         cnv = new Canvas(140, options.height || 50);
     

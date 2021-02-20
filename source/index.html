@@ -1,56 +1,74 @@
 <!DOCTYPE html>
 <html lang="en">
-    <head>
-        <title>monitor</title>
-        <meta charset="UTF-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1">
-        <style>
+
+<head>
+    <title>monitor</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <style>
         .added {
             background-color: white;
-            padding:5px;
-            margin-bottom:5px
+            padding: 5px;
+            margin-bottom: 5px
         }
-        </style>
-    </head>
-    <body>
-        
-        <button id="add" style="position:fixed; top:0px; left: 0px">add</button>
-        <script>
-            var n = document.getElementById('add');
-            n.addEventListener('click', addNode)
-            function addNode() {
-                var n = document.createElement('div'),
-                    remover = document.createElement('button');
-                remover.addEventListener('click', function _(){
-                    remover.removeEventListener('click', _)
-                    n.parentNode.removeChild(n)
+
+        body {
+            height: 50000px;
+            background-image: url("https://www.w3schools.com/images/colorpicker.gif");
+            /* background-image: url("https://upload.wikimedia.org/wikipedia/commons/7/72/Moorhen_feeding_chick.jpg"); */
+            background-repeat: repeat;
+
+        }
+
+        #add {
+            margin: 10px;
+            padding: 10px;
+            font-size: 2em;
+            text-transform: uppercase
+        }
+    </style>
+</head>
+
+<body>
+
+    <button id="add" style="position:fixed; top:0px; left: 0px">add</button>
+    <script>
+        var n = document.getElementById('add');
+        n.addEventListener('click', addNode)
+        function addNode() {
+            var n = document.createElement('div'),
+                remover = document.createElement('button');
+            remover.addEventListener('click', function _() {
+                remover.removeEventListener('click', _)
+                n.parentNode.removeChild(n)
+            })
+            n.className = "added";
+            remover.innerText = 'remove'
+            n.innerHTML = +new Date
+            n.appendChild(remover)
+            document.body.appendChild(n)
+        }
+    </script>
+    <script>
+        window.addEventListener('load', function () {
+            Monitor
+                .showNET()
+                .showFPS()
+                .showMEM({
+                    height: 30
                 })
-                n.className="added";
-                remover.innerText = 'remove'
-                n.innerHTML = +new Date
-                n.appendChild(remover)
-                document.body.appendChild(n)
-            }
-        </script>
-        <script>
-            window.addEventListener('load', function () {
-                Monitor
-                    .showNET()
-                    .showFPS()
-                    .showMEM({
-                        height:30
-                    })
-                    .showTAGS({
-                        frequency: 10,
-                    })
-                    .showEVENTS({
-                        frequency: 10,
-                        exclude: [
-                            'onmousemove',
-                        ]
-                    })
-                    .render();
-            }, false);
-        </script>
-    </body>
+                .showTAGS({
+                    frequency: 10,
+                })
+                .showEVENTS({
+                    frequency: 10,
+                    exclude: [
+                        'onmousemove',
+                    ]
+                })
+                .render();
+        }, false);
+    </script>
+</body>
+
 </html>

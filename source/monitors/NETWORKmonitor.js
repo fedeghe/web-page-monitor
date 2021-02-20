@@ -6,7 +6,7 @@ function NETWORKmonitor(options = {}){
     this.$panel = createNode('div', {
         className: 'mid-panel x-panel NETWORKmonitor',
     });
-    var $title = createNode('div', {text: 'NETWORKmonitor', className: 'title'}),
+    var $title = createNode('div', {text: 'NETWORK', className: 'title'}),
         $total = createNode('span'),
         factor = 2 ** 20;
     appendTo(this.$panel, [$title, $total]);

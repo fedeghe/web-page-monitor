@@ -14,7 +14,7 @@ function EVENTSmonitor(options = {}){
     this.$panel = createNode('div', {
         className: 'small-panel x-panel',
     });
-    this.$title = createNode('div', {text: 'EVENTSmonitor', className: 'title'});
+    this.$title = createNode('div', {text: 'EVENTS', className: 'title'});
     this.$stats = createNode('div', {className: 'flexi'});
     this.$actual = createNode('span');
     this.$max = createNode('span');

@@ -6,7 +6,7 @@ function MEMmonitor(options = {}){
     this.$panel = createNode('div', {
         className: 'mid-panel x-panel MEMmonitor',
     });
-    var $title = createNode('div', {text: 'MEMmonitor', className: 'title'}),
+    var $title = createNode('div', {text: 'MEM', className: 'title'}),
         $total = createNode('li'),
         cnvTotal = new Canvas(140, options.height || 50),
         $used = createNode('li'),

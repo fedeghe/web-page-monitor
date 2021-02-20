@@ -6,7 +6,7 @@ function FPSmonitor(options = {}){
     this.$panel = createNode('div', {
         className: 'high-panel x-panel',
     });
-    const $title = createNode('span', {text: 'FPSmonitor', className: 'title'}),
+    const $title = createNode('span', {text: 'FPS', className: 'title'}),
         $fps = createNode('span'),
         $cnv = new Canvas(140, options.height  || 50),
         times = [];
