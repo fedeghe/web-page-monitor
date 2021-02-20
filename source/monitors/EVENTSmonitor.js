@@ -1,7 +1,7 @@
 import BaseMonitor from './BaseMonitor';
 import {extend, createNode, appendTo} from './utils';
 
-
+import Canvas from './canvas'
 
 extend(EVENTSmonitor, BaseMonitor);
 function EVENTSmonitor(options = {}){
@@ -16,7 +16,9 @@ function EVENTSmonitor(options = {}){
     this.$title = createNode('span', {text: 'EVENTSmonitor'});
     this.$num = createNode('span');
 
-    appendTo(this.panel, [this.$title, this.$num]);
+    var cnv = new Canvas(140, 50);
+
+    appendTo(this.panel, [this.$title, this.$num, cnv.tag]);
     this.listen();
 
     setInterval(function () {
@@ -24,6 +26,7 @@ function EVENTSmonitor(options = {}){
         self.max = Math.max(self.max, current)
         self.$num.innerHTML = ` (${current} | max:${self.max})`;
         self.events = []
+        cnv.add(current)
     }, options.frequency ? 1000 / options.frequency : 1000)
 
 }

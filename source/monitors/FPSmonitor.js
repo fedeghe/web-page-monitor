@@ -18,8 +18,9 @@ function FPSmonitor(options = {}){
                 times.shift();
             }
             times.push(now);
-            fps = times.length;
-            $fps.innerHTML = fps;
+            var l = times.length
+            fps = l > 60 ? 60 : l;
+            $fps.innerHTML = `: ${fps} fps`;
             _();
         });
     })();
