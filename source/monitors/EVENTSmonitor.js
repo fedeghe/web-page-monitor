@@ -1,7 +1,6 @@
 import BaseMonitor from './BaseMonitor';
 import {extend, createNode, appendTo} from './utils';
-
-import Canvas from './canvas'
+import Canvas from './canvas';
 
 extend(EVENTSmonitor, BaseMonitor);
 function EVENTSmonitor(options = {}){
@@ -9,7 +8,7 @@ function EVENTSmonitor(options = {}){
     this.min = Infinity;
     this.max = -Infinity;
     this.events = [];
-    this.options = options
+    this.options = options;
 
     this.$panel = createNode('div', {
         className: 'small-panel x-panel',
@@ -30,26 +29,18 @@ function EVENTSmonitor(options = {}){
         self.max = Math.max(self.max, actual)
         self.$actual.innerHTML = `Actual: ${actual}`;
         self.$max.innerHTML = `Max: ${self.max}`;
-        self.events = []
-        cnv.add(actual)
-    }, options.frequency ? 1000 / options.frequency : 1000)
+        self.events = [];
+        cnv.add(actual);
+    }, options.frequency ? 1000 / options.frequency : 1000);
 
 }
 
 EVENTSmonitor.prototype.add = function (e) {
-    this.events.push(e)
+    this.events.push(e);
 };
 EVENTSmonitor.prototype.listen = function () {
     var self = this;
-    var t = Object.keys(window).reduce((acc,key) => {
-        if (/^on/.test(key)) {
-            acc.push(key)
-        }
-        return acc
-    }, [])
-    console.log(t.join(','))
     Object.keys(window).forEach(key => {
-        
         if ( /^on/.test(key)
             && (
                 !self.options.exclude

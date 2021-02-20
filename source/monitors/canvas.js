@@ -43,15 +43,6 @@ Canvas.prototype.add = function (value) {
     this.normalized = this.normalized.slice(beginSlice);
     this.render();
 };
-Canvas.prototype.drawPx = function (x, y, r, g, b, a) {
-    var cnvsData = this.ctx.getImageData(0, 0, this.width, this.height),
-        index = (x + y * this.width) * 4;
-    
-    cnvsData.data[index + 0] = r;
-    cnvsData.data[index + 1] = g;
-    cnvsData.data[index + 2] = b;
-    cnvsData.data[index + 3] = a;
-}
 Canvas.prototype.getTag = function () {
     return this.tag;
 };

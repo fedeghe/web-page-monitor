@@ -24,7 +24,7 @@ function MEMmonitor(options = {}){
         $limit.innerHTML = `Limit: ${(performance.memory.jsHeapSizeLimit / factor).toFixed(2)}MB`;
         cnvTotal.add(total);
         cnvUsed.add(used);
-    }, options.frequency ? 1000 / options.frequency : 1000)
+    }, options.frequency ? 1000 / options.frequency : 1000);
 
 }
 extend(MEMmonitor, BaseMonitor);

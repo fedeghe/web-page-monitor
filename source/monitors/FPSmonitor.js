@@ -1,7 +1,7 @@
 import BaseMonitor from './BaseMonitor';
 import {extend, createNode, appendTo} from './utils';
 import Canvas from './canvas';
-import './style.less'
+import './style.less';
 function FPSmonitor(options = {}){
     this.$panel = createNode('div', {
         className: 'high-panel x-panel',
@@ -22,10 +22,10 @@ function FPSmonitor(options = {}){
                 times.shift();
             }
             times.push(now);
-            var l = times.length
+            var l = times.length;
             fps = l > 60 ? 60 : l;
             $fps.innerHTML = `: ${fps} fps`;
-            $cnv.add(fps)
+            $cnv.add(fps);
             _();
         });
     })();
