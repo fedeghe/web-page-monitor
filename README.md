@@ -2,7 +2,9 @@
 
 ### install
 ``` sh
-yarn add web-page-monitor
+// yarn add web-page-monitor
+
+NOT JET: es4, es2020, umd authoring is not ready
 ```
 
 ### use it
