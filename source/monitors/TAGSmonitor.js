@@ -16,8 +16,9 @@ function TAGSmonitor(options = {}) {
     appendTo(this.panel, [title, num, canvas]);
     
     setInterval(function () {
-        var l = document.getElementsByTagName('*').length;
-        num.innerHTML = l
+        var nodes = document.getElementsByTagName('*'),
+            l = nodes.length;
+        num.innerHTML = l;
     }, options.frequency ? 1000 / options.frequency : 1000);
 }
 extend(TAGSmonitor, BaseMonitor);
