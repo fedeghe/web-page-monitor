@@ -20,7 +20,7 @@ module.exports = {
     minimizer: [
         new UglifyJsPlugin()
     ]
-},
+  },
   plugins: [
     new webpack.BannerPlugin(
         fs.readFileSync(
