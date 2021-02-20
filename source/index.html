@@ -34,8 +34,12 @@
         </script>
         <script>
             window.addEventListener('load', function () {
-                Monitor.showFPS()
-                    .showMEM()
+                Monitor
+                    .showNET()
+                    .showFPS()
+                    .showMEM({
+                        height:30
+                    })
                     .showTAGS({
                         frequency: 10,
                     })

@@ -1,22 +1,29 @@
 import BaseMonitor from './BaseMonitor';
 import {extend, createNode, appendTo} from './utils';
+import Canvas from './canvas'
 import './style.less'
 function MEMmonitor(options = {}){
-    this.panel = createNode('div', {
+    this.$panel = createNode('div', {
         className: 'mid-panel x-panel MEMmonitor',
-        text: 'MEMmonitor'
     });
-    var total = createNode('li'),
-        used = createNode('li'),
-        limit = createNode('li'),
-        list = createNode('ul'),
+    var $title = createNode('div', {text: 'MEMmonitor', className: 'title'}),
+        $total = createNode('li'),
+        cnvTotal = new Canvas(140, options.height || 50),
+        $used = createNode('li'),
+        cnvUsed = new Canvas(140, options.height || 50),
+        $limit = createNode('li'),
+        $list = createNode('ul'),
         factor = 2 ** 20;
-    appendTo(list, [total, used, limit]);
-    appendTo(this.panel, [list]);
+    appendTo($list, [$title, $total, cnvTotal.getTag(), $used, cnvUsed.getTag(), $limit]);
+    appendTo(this.$panel, [$list]);
     setInterval(function () {
-        total.innerHTML = `Total: ${(performance.memory.totalJSHeapSize / factor).toFixed(2)}MB`;
-        used.innerHTML = `Used: ${(performance.memory.usedJSHeapSize / factor).toFixed(2)}MB`;
-        limit.innerHTML = `Limit: ${(performance.memory.jsHeapSizeLimit / factor).toFixed(2)}MB`;
+        var total = (performance.memory.totalJSHeapSize / factor).toFixed(2),
+            used = (performance.memory.usedJSHeapSize / factor).toFixed(2);
+        $total.innerHTML = `Total: ${total}MB`;
+        $used.innerHTML = `Used: ${used}MB`;
+        $limit.innerHTML = `Limit: ${(performance.memory.jsHeapSizeLimit / factor).toFixed(2)}MB`;
+        cnvTotal.add(total);
+        cnvUsed.add(used);
     }, options.frequency ? 1000 / options.frequency : 1000)
 
 }

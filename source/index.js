@@ -8,6 +8,7 @@ window.Monitor = (function() {
         showMEM: options => {m.addPanel('mem', options); return out;},
         showTAGS: options => {m.addPanel('tags', options); return out;},
         showEVENTS: options => {m.addPanel('events', options); return out;},
+        showNET: options => {m.addPanel('net', options); return out;},
         render: () => m.render(document.body),
     };
     return out;

@@ -52,6 +52,9 @@ Canvas.prototype.drawPx = function (x, y, r, g, b, a) {
     cnvsData.data[index + 2] = b;
     cnvsData.data[index + 3] = a;
 }
+Canvas.prototype.getTag = function () {
+    return this.tag;
+};
 Canvas.prototype.render = function () {
     var self = this;
     this.clear();

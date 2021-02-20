@@ -1,15 +1,19 @@
 import BaseMonitor from './BaseMonitor';
 import {extend, createNode, appendTo} from './utils';
+import Canvas from './canvas';
+import './style.less'
 function FPSmonitor(options = {}){
-    this.panel = createNode('div',{
+    this.$panel = createNode('div', {
         className: 'high-panel x-panel',
-        text: 'FPSmonitor'
     });
-    var $fps = createNode('span')
-    const times = [];
+    const $title = createNode('span', {text: 'FPSmonitor', className: 'title'}),
+        $fps = createNode('span'),
+        $cnv = new Canvas(140, options.height  || 50),
+        times = [];
+
     let fps;
 
-    appendTo(this.panel, [$fps]);
+    appendTo(this.$panel, [$title, $fps, $cnv.getTag()]);
 
     (function _() {
         window.requestAnimationFrame(() => {
@@ -21,6 +25,7 @@ function FPSmonitor(options = {}){
             var l = times.length
             fps = l > 60 ? 60 : l;
             $fps.innerHTML = `: ${fps} fps`;
+            $cnv.add(fps)
             _();
         });
     })();

@@ -6,27 +6,32 @@ import Canvas from './canvas'
 extend(EVENTSmonitor, BaseMonitor);
 function EVENTSmonitor(options = {}){
     var self = this;
-    this.max = 0;
+    this.min = Infinity;
+    this.max = -Infinity;
     this.events = [];
     this.options = options
 
-    this.panel = createNode('div', {
+    this.$panel = createNode('div', {
         className: 'small-panel x-panel',
     });
-    this.$title = createNode('span', {text: 'EVENTSmonitor'});
-    this.$num = createNode('span');
+    this.$title = createNode('div', {text: 'EVENTSmonitor', className: 'title'});
+    this.$stats = createNode('div', {className: 'flexi'});
+    this.$actual = createNode('span');
+    this.$max = createNode('span');
 
-    var cnv = new Canvas(140, 50);
+    var cnv = new Canvas(140, options.height || 50);
 
-    appendTo(this.panel, [this.$title, this.$num, cnv.tag]);
+    appendTo(this.$stats, [this.$actual, this.$max]);
+    appendTo(this.$panel, [this.$title, this.$stats, cnv.getTag()]);
     this.listen();
 
     setInterval(function () {
-        var current = self.events.length;
-        self.max = Math.max(self.max, current)
-        self.$num.innerHTML = ` (${current} | max:${self.max})`;
+        var actual = self.events.length;
+        self.max = Math.max(self.max, actual)
+        self.$actual.innerHTML = `Actual: ${actual}`;
+        self.$max.innerHTML = `Max: ${self.max}`;
         self.events = []
-        cnv.add(current)
+        cnv.add(actual)
     }, options.frequency ? 1000 / options.frequency : 1000)
 
 }
