@@ -1,4 +1,4 @@
-# web-page-monitor (work in progress)
+# web-page-monitor
 
 ## Install it  
 ``` sh
