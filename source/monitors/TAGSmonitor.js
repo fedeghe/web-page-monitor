@@ -2,7 +2,7 @@ import BaseMonitor from './BaseMonitor';
 import {extend, createNode, appendTo} from './utils';
 import './style.less';
 import Canvas from './canvas';
-function TAGSmonitor(options = {}) {
+function TAGSmonitor(options = {}, monitor) {
     this.$panel = createNode('div', {
         className: 'small-panel x-panel',
     });
@@ -14,7 +14,7 @@ function TAGSmonitor(options = {}) {
     
     setInterval(function () {
         var nodes = document.getElementsByTagName('*'),
-            l = nodes.length;
+            l = nodes.length - monitor.nodeCount;
         $num.innerHTML = `: ${l}`;
         cnv.add(l);
     }, options.frequency ? 1000 / options.frequency : 1000);

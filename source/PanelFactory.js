@@ -4,14 +4,14 @@ import MEMmonitor from './monitors/MEMmonitor';
 import EVENTSmonitor from './monitors/EVENTSmonitor';
 import NETWORKmonitor from './monitors/NETWORKmonitor';
 
-var PanelFactory = (type, params) => {
+var PanelFactory = (type, params, monitor) => {
 
     switch(type) {
-        case 'fps': return new FPSmonitor(params);
-        case 'mem': return new MEMmonitor(params);
-        case 'tags': return new TAGSmonitor(params);
-        case 'net': return new NETWORKmonitor(params);
-        case 'events': return new EVENTSmonitor(params);
+        case 'fps': return new FPSmonitor(params, monitor);
+        case 'mem': return new MEMmonitor(params, monitor);
+        case 'tags': return new TAGSmonitor(params, monitor);
+        case 'net': return new NETWORKmonitor(params, monitor);
+        case 'events': return new EVENTSmonitor(params, monitor);
         default: return null;
     }
 };
