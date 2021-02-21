@@ -23,7 +23,7 @@ WebPageMonitor
 
 
 <img align="left" src="https://raw.githubusercontent.com/fedeghe/web-page-monitor/master/img/network.png">
-<div style="min-height:50px;">
+<div style="min-height:80px;">
     <details>
         <summary>NETWORK monitor</summary>
         Shows the overall data network flow in MB.  
@@ -38,7 +38,7 @@ WebPageMonitor
 <hr />
 
 <img align="left" src="https://raw.githubusercontent.com/fedeghe/web-page-monitor/master/img/fps.png">
-<div style="min-height:90px;">
+<div style="min-height:120px;">
     <details>
         <summary>FPS monitor</summary>
         Shows the overall data network flow in MB.  
@@ -55,7 +55,7 @@ WebPageMonitor
 
 
 <img align="left" src="https://raw.githubusercontent.com/fedeghe/web-page-monitor/master/img/mem.png">
-<div style="min-height:145px;">
+<div style="min-height:175px;">
     <details>
         <summary>MEMORY monitor</summary>
         Shows the overall data network flow in MB.  
@@ -70,7 +70,7 @@ WebPageMonitor
 <hr />
 
 <img align="left" src="https://raw.githubusercontent.com/fedeghe/web-page-monitor/master/img/tags.png">
-<div style="min-height:90px;">
+<div style="min-height:120px;">
     <details>
         <summary>TAGS monitor</summary>
         Shows the overall data network flow in MB.  
@@ -86,7 +86,7 @@ WebPageMonitor
 
 
 <img align="left" src="https://raw.githubusercontent.com/fedeghe/web-page-monitor/master/img/events.png">
-<div style="min-height:105px;">
+<div style="min-height:135px;">
     <details>
         <summary>EVENTS monitor</summary>
         Shows the overall data network flow in MB.  
