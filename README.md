@@ -25,7 +25,7 @@ WebPageMonitor
 
 <div>
     <details>
-        <summary>NETWORK</summary>
+        <summary>NETWORK options</summary>
         <div>
             Shows the overall data network flow in MB. 
             Options available:
@@ -43,7 +43,7 @@ WebPageMonitor
 
 <div>
     <details>
-        <summary>FPS</summary>
+        <summary>FPS options</summary>
         <div>
             Shows the current rendering frames per seconds.  
             Options available:
@@ -61,7 +61,7 @@ WebPageMonitor
 
 <div>
     <details>
-        <summary>MEMORY</summary>
+        <summary>MEMORY options</summary>
         <div>Shows the total and used instant memory in MB.  
             Options available:
             <pre style="font-size:0.7em">{ 
@@ -78,7 +78,7 @@ WebPageMonitor
 
 <div>
     <details>
-        <summary>TAGS</summary>
+        <summary>TAGS options</summary>
         <div>Shows how many nodes are in the page.  
             Options available:
             <pre style="font-size:0.7em">{ 
@@ -96,7 +96,7 @@ WebPageMonitor
 
 <div>
     <details>
-        <summary>EVENTS</summary>
+        <summary>EVENTS options</summary>
         <div>Shows the instant number of occurring events whithin the period .  
             Options available:
             <pre style="font-size:0.7em">{ 
