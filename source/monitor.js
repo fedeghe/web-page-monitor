@@ -18,7 +18,7 @@ Monitor.prototype.render = function (where) {
         panel.render(self.container, self);
     });
     where.appendChild(this.container);
-    this.nodeCount = this.container.getElementsByTagName('*').length;
+    this.nodeCount = this.container.getElementsByTagName('*').length + 1;// the container
 };
 
 export default Monitor;
