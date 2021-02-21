@@ -2,7 +2,7 @@
   "name": "web-page-monitor",
   "description": "Monitor some aspect of a web page",
   "version": "0.0.1",
-  "main": "dist/web-page-monitor.js",
+  "main": "dist/index.js",
   
 
   "repository": "https://github.com/fedeghe/web-page-monitor.git",
