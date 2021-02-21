@@ -2,24 +2,19 @@
 
 ### install
 ``` sh
-// yarn add web-page-monitor
-
-NOT JET: es4, es2020, umd authoring is not ready
+yarn add web-page-monitor
 ```
 
 ### use it
 ```
-import Monitor from 'web-page-monitor'
+import 'web-page-monitor'
 
-Monitor.showFPS()
+WebPageMonitor
+    .showFPS()
     .showMEM()
     .showTAGS()
-    .showEVENTS({
-        frequency: 1,
-        exclude: [
-            'onmousemove',
-        ]
-    })
+    .showEVENTS()
+    .showNET()
     .render();
 ```
 
