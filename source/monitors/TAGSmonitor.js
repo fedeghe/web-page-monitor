@@ -8,7 +8,7 @@ function TAGSmonitor(options = {}) {
     });
     var $title = createNode('div', {text: 'TAGS', className: 'title'}),
         $num = createNode('span'),
-        cnv = new Canvas(140, options.height || 50);
+        cnv = new Canvas({width: 140, height: options.height || 50, options});
     
     appendTo(this.$panel, [$title, $num, cnv.getTag()]);
     

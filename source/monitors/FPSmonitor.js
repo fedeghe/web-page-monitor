@@ -8,7 +8,7 @@ function FPSmonitor(options = {}){
     });
     const $title = createNode('span', {text: 'FPS', className: 'title'}),
         $fps = createNode('span'),
-        $cnv = new Canvas(140, options.height  || 50),
+        $cnv = new Canvas({width: 140, height: options.height  || 50, options}),
         times = [];
 
     let fps;

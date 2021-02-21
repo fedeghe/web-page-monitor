@@ -8,9 +8,9 @@ function MEMmonitor(options = {}){
     });
     var $title = createNode('div', {text: 'MEM', className: 'title'}),
         $total = createNode('li'),
-        cnvTotal = new Canvas(140, options.height || 50),
+        cnvTotal = new Canvas({width: 140, height: options.height || 50, options}),
         $used = createNode('li'),
-        cnvUsed = new Canvas(140, options.height || 50),
+        cnvUsed = new Canvas({width: 140, height: options.height || 50, options}),
         $limit = createNode('li'),
         $list = createNode('ul'),
         factor = 2 ** 20;

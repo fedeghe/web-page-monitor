@@ -18,7 +18,7 @@ function EVENTSmonitor(options = {}){
     this.$actual = createNode('span');
     this.$max = createNode('span');
 
-    var cnv = new Canvas(140, options.height || 50);
+    var cnv = new Canvas({width:140, height: options.height || 50, options});
 
     appendTo(this.$stats, [this.$actual, this.$max]);
     appendTo(this.$panel, [this.$title, this.$stats, cnv.getTag()]);

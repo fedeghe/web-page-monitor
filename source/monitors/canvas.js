@@ -1,12 +1,13 @@
 import {createNode} from './utils'
 
-function Canvas(w, h) {
-    this.width = w;
-    this.height = h;
+function Canvas({width, height, options}) {
+    this.width = width;
+    this.height = height;
+    this.options = options;
     this.tag = createNode('canvas', {
         attributes: {
-            width: w,
-            height: h
+            width,
+            height
         }
     });
     this.ctx = this.tag.getContext('2d');
@@ -51,7 +52,7 @@ Canvas.prototype.render = function () {
     this.clear();
     this.normalized.forEach((d, i) => {
         self.ctx.beginPath();
-        this.ctx.strokeStyle = "rgba(0,256,0, 0.5)";
+        self.ctx.strokeStyle = self.options.color || "rgba(0,256,0, 0.5)";
         self.ctx.moveTo(i, self.height);
         self.ctx.lineTo(i, self.height - d);
         self.ctx.stroke();

@@ -11,10 +11,7 @@ var PanelFactory = (type, params) => {
         case 'mem': return new MEMmonitor(params);
         case 'tags': return new TAGSmonitor(params);
         case 'net': return new NETWORKmonitor(params);
-        case 'events': {
-            console.log('options2', params)
-            return new EVENTSmonitor(params);
-        }
+        case 'events': return new EVENTSmonitor(params);
         default: return null;
     }
 };
