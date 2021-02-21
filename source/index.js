@@ -11,5 +11,5 @@ import './style.less'
             showNET: options => {m.addPanel('net', options); return out;},
             render: () => m.render(document.body),
         };
-    window.Monitor = out;
+    window.WebPageMonitor = out;
 })();
