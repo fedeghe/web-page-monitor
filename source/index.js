@@ -9,7 +9,7 @@ import './style.less'
             showTAGS: options => {m.addPanel('tags', options); return out;},
             showEVENTS: options => {m.addPanel('events', options); return out;},
             showNET: options => {m.addPanel('net', options); return out;},
-            render: ({ where }) => m.render(where || document.body),
+            render: ({ where } = {}) => m.render(where || document.body),
         };
     window.WebPageMonitor = out;
 })();
