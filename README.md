@@ -11,13 +11,15 @@ yarn add web-page-monitor
 import 'web-page-monitor'
 
 WebPageMonitor
-    .showFPS()
-    .showMEM()
-    .showTAGS()
-    .showEVENTS()
-    .showNET()
-    .render();
+    .showFPS(/* options */)
+    .showMEM(/* options */)
+    .showTAGS(/* options */)
+    .showEVENTS(/* options */)
+    .showNET(/* options */)
+    .render(/* where, default body */);
 ```
+
+if You want to render elsewhere just pass `{where: YourTargetNode}` when calling _render_.
 
 ## Available panels 
 
