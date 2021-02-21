@@ -1,10 +1,15 @@
 {
   "name": "web-page-monitor",
   "description": "Monitor some aspect of a web page",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "main": "dist/index.js",
-  
-
+  "keywords": [
+    "performance monitor",
+    "perf monitor",
+    "web page performance",
+    "web page performance monitor",
+    "web page perf monitor"
+  ],
   "repository": "https://github.com/fedeghe/web-page-monitor.git",
   "author": "fedeghe <fedeghe@gmail.com>",
   "license": "MIT",
