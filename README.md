@@ -1,12 +1,12 @@
 # web-page-monitor (work in progress)
 
-### install
+## Install it  
 ``` sh
 yarn add web-page-monitor
 ```
 
 
-### use it
+## Use it
 ```
 import 'web-page-monitor'
 
