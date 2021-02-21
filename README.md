@@ -19,16 +19,13 @@ WebPageMonitor
     .render();
 ```
 
-## Available panels
+## Available panels 
 
-
+![GitHub Logo](https://raw.githubusercontent.com/fedeghe/web-page-monitor/master/img/network.png)
 
 <div>
     <details>
-        <summary  style="height:100px;">
-            <span>NETWORK</span>
-            <img align="left" src="https://raw.githubusercontent.com/fedeghe/web-page-monitor/master/img/network.png">
-        </summary>
+        <summary>NETWORK</summary>
         <div>Shows the overall data network flow in MB.  
             Options available:
             <pre>
@@ -42,39 +39,16 @@ WebPageMonitor
 <hr />
 
 
-<div>
-    <details>
-        <summary style="height:180px;">
-            <span>FPS monitor<span>
-            <img align="left" src="https://raw.githubusercontent.com/fedeghe/web-page-monitor/master/img/fps.png">
-        </summary>
-        <div>
-            Shows the overall data network flow in MB.  
-            Options available:
-            <pre>
-        {
-            height: int // in px the height of the panel
-        }
-            </pre>
-        </div>
-    </details>
-</div>
-<hr />
 
-
-
+![GitHub Logo](https://raw.githubusercontent.com/fedeghe/web-page-monitor/master/img/fps.png)
 
 <div>
     <details>
-        <summary style="height:175px;">
-            <span>MEMORY monitorM</span>
-            <img align="left" src="https://raw.githubusercontent.com/fedeghe/web-page-monitor/master/img/mem.png">
-        </summary>
-        <div>
-            Shows the overall data network flow in MB.  
+        <summary>NETWORK</summary>
+        <div>Shows the overall data network flow in MB.  
             Options available:
             <pre>
-        {
+        { 
             height: int // in px the height of the panel
         }
             </pre>
@@ -84,17 +58,32 @@ WebPageMonitor
 <hr />
 
 
-<div style="min-height:120px;">
+![GitHub Logo](https://raw.githubusercontent.com/fedeghe/web-page-monitor/master/img/mem.png)
+
+<div>
     <details>
-        <summary>
-            <span>TAGS monitor</span>
-            <img align="left" src="https://raw.githubusercontent.com/fedeghe/web-page-monitor/master/img/tags.png">
-        </summary>
-        <div>
-            Shows the overall data network flow in MB.  
+        <summary>MEMORY</summary>
+        <div>Shows the overall data network flow in MB.  
             Options available:
             <pre>
-        {
+        { 
+            height: int // in px the height of the panel
+        }
+            </pre>
+        </div>
+    </details>
+</div>
+<hr />
+
+![GitHub Logo](https://raw.githubusercontent.com/fedeghe/web-page-monitor/master/img/tags.png)
+
+<div>
+    <details>
+        <summary>TAGS</summary>
+        <div>Shows the overall data network flow in MB.  
+            Options available:
+            <pre>
+        { 
             height: int // in px the height of the panel
         }
             </pre>
@@ -104,28 +93,31 @@ WebPageMonitor
 <hr />
 
 
+![GitHub Logo](https://raw.githubusercontent.com/fedeghe/web-page-monitor/master/img/events.png)
 
-<div style="min-height:135px;">
+<div>
     <details>
-        <summary>
-            <span>EVENTS monitor</span>
-            <img align="left" src="https://raw.githubusercontent.com/fedeghe/web-page-monitor/master/img/events.png">
-        </summary>
-        <div>
-        Shows the overall data network flow in MB.  
-        Options available:
-        <pre>
-    {
-        height: int // in px the height of the panel
-    }
-        </pre>
-        <p>also</p>
+        <summary>EVENTS</summary>
+        <div>Shows the overall data network flow in MB.  
+            Options available:
+            <pre>
+        { 
+            height: int // in px the height of the panel
+        }
+            </pre>
+            <p>also</p>
         <pre>
 onsearch, onappinstalled, onbeforeinstallprompt, onabort, onblur, oncancel, oncanplay, oncanplaythrough, onchange, onclick, onclose, oncontextmenu, oncuechange, ondblclick, ondrag, ondragend, ondragenter, ondragleave, ondragover, ondragstart, ondrop, ondurationchange, onemptied, onended, onerror, onfocus, onformdata, oninput, oninvalid, onkeydown, onkeypress, onkeyup, onload, onloadeddata, onloadedmetadata, onloadstart, onmousedown, onmouseenter, onmouseleave, onmousemove, onmouseout, onmouseover, onmouseup, onmousewheel, onpause, onplay, onplaying, onprogress, onratechange, onreset, onresize, onscroll, onseeked, onseeking, onselect, onstalled, onsubmit, onsuspend, ontimeupdate, ontoggle, onvolumechange, onwaiting, onwebkitanimationend, onwebkitanimationiteration, onwebkitanimationstart, onwebkittransitionend, onwheel, onauxclick, ongotpointercapture, onlostpointercapture, onpointerdown, onpointermove, onpointerup, onpointercancel, onpointerover, onpointerout, onpointerenter, onpointerleave, onselectstart, onselectionchange, onanimationend, onanimationiteration, onanimationstart, ontransitionrun, ontransitionstart, ontransitionend, ontransitioncancel, onafterprint, onbeforeprint, onbeforeunload, onhashchange, onlanguagechange, onmessage, onmessageerror, onoffline, ononline, onpagehide, onpageshow, onpopstate, onrejectionhandled, onstorage, onunhandledrejection, onunload, ondevicemotion, ondeviceorientation, ondeviceorientationabsolute, onpointerrawupdate
         </pre> 
-        </div> 
+        </div>
     </details>
 </div>
+
+
+
+
+
+
 <hr />
 fedegheATgmailDOTcom
 
