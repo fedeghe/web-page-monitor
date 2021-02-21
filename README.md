@@ -23,7 +23,7 @@ WebPageMonitor
 
 
 
-<div0px;">
+<div>
     <details>
         <summary  style="min-height:50px;">
             <span>NETWORK</span>
