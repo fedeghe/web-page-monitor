@@ -25,7 +25,7 @@ WebPageMonitor
 
 <div>
     <details>
-        <summary  style="min-height:100px;">
+        <summary  style="height:100px;">
             <span>NETWORK</span>
             <img align="left" src="https://raw.githubusercontent.com/fedeghe/web-page-monitor/master/img/network.png">
         </summary>
@@ -44,7 +44,7 @@ WebPageMonitor
 
 <div>
     <details>
-        <summary style="min-height:120px;">
+        <summary style="height:180px;">
             <span>FPS monitor<span>
             <img align="left" src="https://raw.githubusercontent.com/fedeghe/web-page-monitor/master/img/fps.png">
         </summary>
