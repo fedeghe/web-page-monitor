@@ -4,7 +4,7 @@ import Canvas from './canvas'
 import './style.less'
 function MEMmonitor(options = {}){
     this.$panel = createNode('div', {
-        className: 'mid-panel x-panel MEMmonitor',
+        className: 'x-panel MEMmonitor',
     });
     var $title = createNode('div', {text: 'MEM', className: 'title'}),
         $total = createNode('li'),

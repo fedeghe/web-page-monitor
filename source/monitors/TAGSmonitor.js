@@ -4,7 +4,7 @@ import './style.less';
 import Canvas from './canvas';
 function TAGSmonitor(options = {}, monitor) {
     this.$panel = createNode('div', {
-        className: 'small-panel x-panel',
+        className: 'x-panel',
     });
     var $title = createNode('div', {text: 'TAGS: ', className: 'title'}),
         $total = createNode('span'),

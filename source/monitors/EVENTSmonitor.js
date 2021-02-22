@@ -11,7 +11,7 @@ function EVENTSmonitor(options = {}){
     this.options = options;
 
     this.$panel = createNode('div', {
-        className: 'small-panel x-panel',
+        className: 'x-panel',
     });
     this.$title = createNode('div', {text: 'EVENTS', className: 'title'});
     this.$stats = createNode('div', {className: 'flexi'});

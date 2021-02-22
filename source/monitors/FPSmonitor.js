@@ -4,7 +4,7 @@ import Canvas from './canvas';
 import './style.less';
 function FPSmonitor(options = {}){
     this.$panel = createNode('div', {
-        className: 'high-panel x-panel',
+        className: 'x-panel',
     });
     const $title = createNode('span', {text: 'FPS', className: 'title'}),
         $fps = createNode('span'),

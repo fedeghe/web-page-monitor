@@ -3,7 +3,7 @@ import {extend, createNode, appendTo} from './utils';
 import './style.less';
 function NETWORKmonitor(options = {}){
     this.$panel = createNode('div', {
-        className: 'mid-panel x-panel NETWORKmonitor',
+        className: 'x-panel NETWORKmonitor',
     });
     var $title = createNode('div', {text: 'NETWORK', className: 'title'}),
         $total = createNode('div'),
