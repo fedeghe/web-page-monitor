@@ -74,7 +74,7 @@ if You want to render elsewhere just pass `{where: YourTargetNode}` when calling
 
 ## Available panels 
 
-![GitHub Logo](https://raw.githubusercontent.com/fedeghe/web-page-monitor/master/img/network.png)
+![network monitor](https://raw.githubusercontent.com/fedeghe/web-page-monitor/master/img/network.png)
 
 <div>
     <details>
@@ -92,7 +92,7 @@ if You want to render elsewhere just pass `{where: YourTargetNode}` when calling
 
 
 
-![GitHub Logo](https://raw.githubusercontent.com/fedeghe/web-page-monitor/master/img/fps.png)
+![memory monitor](https://raw.githubusercontent.com/fedeghe/web-page-monitor/master/img/fps.png)
 
 <div>
     <details>
@@ -110,7 +110,7 @@ if You want to render elsewhere just pass `{where: YourTargetNode}` when calling
 <hr />
 
 
-![GitHub Logo](https://raw.githubusercontent.com/fedeghe/web-page-monitor/master/img/mem.png)
+![memory monitor](https://raw.githubusercontent.com/fedeghe/web-page-monitor/master/img/mem.png)
 
 <div>
     <details>
@@ -127,7 +127,7 @@ if You want to render elsewhere just pass `{where: YourTargetNode}` when calling
 </div>
 <hr />
 
-![GitHub Logo](https://raw.githubusercontent.com/fedeghe/web-page-monitor/master/img/tags.png)
+![tags monitor](https://raw.githubusercontent.com/fedeghe/web-page-monitor/master/img/tags.png)
 
 <div>
     <details>
