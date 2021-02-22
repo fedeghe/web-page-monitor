@@ -1,7 +1,7 @@
 import BaseMonitor from './BaseMonitor';
 import {extend, createNode, appendTo} from './utils';
 import Canvas from './canvas'
-import './style.less'
+
 function MEMmonitor(options = {}){
     this.$panel = createNode('div', {
         className: 'x-panel MEMmonitor',

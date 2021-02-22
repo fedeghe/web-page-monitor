@@ -1,6 +1,6 @@
 import BaseMonitor from './BaseMonitor';
 import {extend, createNode, appendTo} from './utils';
-import './style.less';
+
 function NETWORKmonitor(options = {}){
     this.$panel = createNode('div', {
         className: 'x-panel NETWORKmonitor',

@@ -1,6 +1,6 @@
 import BaseMonitor from './BaseMonitor';
 import {extend, createNode, appendTo} from './utils';
-import './style.less';
+
 import Canvas from './canvas';
 function TAGSmonitor(options = {}, monitor) {
     this.$panel = createNode('div', {
