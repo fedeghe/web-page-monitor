@@ -78,7 +78,7 @@ if You want to render elsewhere just pass `{where: YourTargetNode}` when calling
 
 <div>
     <details>
-        <summary>NETWORK options</summary>
+        <summary>NETWORK options <strong>(still NOT working as it should)</strong></summary>
         <div>
             Shows the overall data network flow in MB. 
             Options available:
