@@ -1,5 +1,6 @@
 # web-page-monitor
 
+[![](https://data.jsdelivr.com/v1/package/npm/web-page-monitor/badge)](https://www.jsdelivr.com/package/npm/web-page-monitor)
 
 ## Try it
 

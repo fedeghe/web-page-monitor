@@ -1,9 +1,23 @@
 import PanelFactory from './PanelFactory';
 function Monitor() {
+    var self = this;
     this.container = document.createElement('div');
+    this.toggler = document.createElement('div');
     this.container.className = 'monitor-panel';
+    this.toggler.className = 'monitor-panel-toggler';
     this.panels = [];
     this.nodeCount = 0;
+    this.visible = true;
+    this.toggler.addEventListener('click', function () {
+        if (self.visible) {
+            self.container.className = 'monitor-panel-hidden';
+            self.toggler.className = 'monitor-panel-toggler-hidden';
+        } else {
+            self.container.className = 'monitor-panel';
+            self.toggler.className = 'monitor-panel-toggler';
+        }
+        self.visible = !self.visible
+    })
 }
 
 Monitor.prototype.addPanel = function (type, options) {
@@ -11,9 +25,14 @@ Monitor.prototype.addPanel = function (type, options) {
     return this;
 };
 
-Monitor.prototype.render = function (where) {
-    this.container.innerHTML = '';
+Monitor.prototype.render = function ({
+    where = document.body, collapsible
+}) {
     var self = this;
+    this.container.innerHTML = '';
+    if (collapsible) {
+        self.container.appendChild(this.toggler);
+    }
     this.panels.forEach(function (panel) {
         panel.render(self.container, self);
     });
