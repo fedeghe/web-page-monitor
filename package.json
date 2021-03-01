@@ -1,7 +1,7 @@
 {
   "name": "web-page-monitor",
   "description": "Monitor some aspect of a web page",
-  "version": "0.0.7",
+  "version": "0.0.8",
   "main": "dist/index.js",
   "keywords": [
     "performance monitor",
