@@ -7,11 +7,12 @@
         display:none
     }
     .monitor-panel-toggler-hidden {
-        width:16px;
-        height:16px;
+        width:20px;
+        height:20px;
         position:absolute;
         right:0px;
         bottom:8px;
+        font-size:20px;
         &::after {
             content: '◤';
             cursor: pointer;
@@ -22,7 +23,21 @@
 }
 
 .monitor-panel {
-    // pointer-events: none;
+    .monitor-panel-toggler {
+        width:20px;
+        height:20px;
+        position:absolute;
+        right:0px;
+        bottom:8px;
+        font-size:20px;
+        &::after {
+            content: '◢';
+            cursor: pointer;
+            color:red;
+            cursor:pointer
+        }
+    }
+
     position: fixed;
     bottom: 0px;
     right: 0px;
@@ -64,19 +79,6 @@
         justify-content: space-between;
     }
 
-    .monitor-panel-toggler {
-        width:16px;
-        height:16px;
-        position:absolute;
-        right:0px;
-        bottom:5px;
-        &::after {
-            content: '◢';
-            cursor: pointer;
-            font-size:2em;
-            color:red;
-            cursor:pointer
-        }
-    }
+
 }
 
