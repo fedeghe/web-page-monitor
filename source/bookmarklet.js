@@ -1,6 +1,6 @@
 +function () {
     try {
-        var url = "https://cdn.jsdelivr.net/npm/web-page-monitor@0.0.3/dist/index.js",
+        var url = "https://cdn.jsdelivr.net/npm/web-page-monitor@0.0.11/dist/index.js",
             script = document.createElement('script');
         script.onload = function () {
             WebPageMonitor
@@ -18,7 +18,9 @@
                         'onmousemove',
                     ]
                 })
-                .render();
+                .render({
+                    collapsible: true
+                });
         };
         script.setAttribute('src', url);
         document.getElementsByTagName('head').item(0).appendChild(script);
