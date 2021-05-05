@@ -10,7 +10,7 @@ Create a bookmarklet on your browser (and then try it where policies allows you 
     <summary>click here to show the ready to use <strong>bookmarklet</strong> (no options)</summary>
 
 <pre>
-javascript:void(function(){%2Bfunction%20()%20%7Btry%20%7Bvar%20url%20%3D%20%22https%3A%2F%2Fcdn.jsdelivr.net%2Fnpm%2Fweb-page-monitor%400.0.12%2Fdist%2Findex.min.js%22%2Cscript%20%3D%20document.createElement('script')%3Bscript.onload%20%3D%20function%20()%20%7BWebPageMonitor.showNET().showFPS().showMEM(%7Bheight%3A%2030%7D).showTAGS(%7Bfrequency%3A%2010%7D).showEVENTS(%7Bfrequency%3A%2010%2Cexclude%3A%20%5B'onmousemove'%5D%7D).render(%7Bcollapsible%3A%20true%7D)%3B%7D%3Bscript.setAttribute('src'%2C%20url)%3Bdocument.getElementsByTagName('head').item(0).appendChild(script)%3B%7Dcatch(e)%7Balert('Can%60t%20inject%20script%2C%20most%20likely%20due%20to%20Content-Security-Policy')%3B%7D%7D()%3B}())
+javascript:void(function(){%2Bfunction%20()%20%7Btry%20%7Bvar%20url%20%3D%20%22https%3A%2F%2Fcdn.jsdelivr.net%2Fnpm%2Fweb-page-monitor%400.0.12%2Fdist%2Findex.min.js%22%2Cscript%20%3D%20document.createElement('script')%3Bscript.onload%20%3D%20function%20()%20%7BWebPageMonitor.showNET().showFPS().showMEM(%7Bheight%3A%2030%7D).showVIEW().showTAGS(%7Bfrequency%3A%2010%7D).showEVENTS(%7Bfrequency%3A%2010%2Cexclude%3A%20%5B'onmousemove'%5D%7D).render(%7Bcollapsible%3A%20true%7D)%3B%7D%3Bscript.setAttribute('src'%2C%20url)%3Bdocument.getElementsByTagName('head').item(0).appendChild(script)%3B%7Dcatch(e)%7Balert('Can%60t%20inject%20script%2C%20most%20likely%20due%20to%20Content-Security-Policy')%3B%7D%7D()%3B}())
 </pre>
 
 which comes from the following:
@@ -35,6 +35,7 @@ which comes from the following:
                         'onmousemove',
                     ]
                 })
+                .showVIEW()
                 .render({collapsible:true});
         };
         script.setAttribute('src', url);
@@ -62,7 +63,8 @@ WebPageMonitor
     .showTAGS(/* options */)
     .showEVENTS(/* options */)
     .showNET(/* options */)
-    .render(/* where, default body */);
+    .showVIEW()
+    .render({where: document.body /* default is body */, collapsible: true /* default false */});
 ```
 
 if You want to render elsewhere just pass `{where: YourTargetNode}` when calling _render_.
@@ -145,7 +147,6 @@ if You want to render elsewhere just pass `{where: YourTargetNode}` when calling
 </div>
 <hr />
 
-
 ![GitHub Logo](https://raw.githubusercontent.com/fedeghe/web-page-monitor/master/img/events.png)
 
 <div>
@@ -164,6 +165,17 @@ if You want to render elsewhere just pass `{where: YourTargetNode}` when calling
 onsearch, onappinstalled, onbeforeinstallprompt, onabort, onblur, oncancel, oncanplay, oncanplaythrough, onchange, onclick, onclose, oncontextmenu, oncuechange, ondblclick, ondrag, ondragend, ondragenter, ondragleave, ondragover, ondragstart, ondrop, ondurationchange, onemptied, onended, onerror, onfocus, onformdata, oninput, oninvalid, onkeydown, onkeypress, onkeyup, onload, onloadeddata, onloadedmetadata, onloadstart, onmousedown, onmouseenter, onmouseleave, onmousemove, onmouseout, onmouseover, onmouseup, onmousewheel, onpause, onplay, onplaying, onprogress, onratechange, onreset, onresize, onscroll, onseeked, onseeking, onselect, onstalled, onsubmit, onsuspend, ontimeupdate, ontoggle, onvolumechange, onwaiting, onwebkitanimationend, onwebkitanimationiteration, onwebkitanimationstart, onwebkittransitionend, onwheel, onauxclick, ongotpointercapture, onlostpointercapture, onpointerdown, onpointermove, onpointerup, onpointercancel, onpointerover, onpointerout, onpointerenter, onpointerleave, onselectstart, onselectionchange, onanimationend, onanimationiteration, onanimationstart, ontransitionrun, ontransitionstart, ontransitionend, ontransitioncancel, onafterprint, onbeforeprint, onbeforeunload, onhashchange, onlanguagechange, onmessage, onmessageerror, onoffline, ononline, onpagehide, onpageshow, onpopstate, onrejectionhandled, onstorage, onunhandledrejection, onunload, ondevicemotion, ondeviceorientation, ondeviceorientationabsolute, onpointerrawupdate
         </pre> 
         </div>
+    </details>
+</div>
+
+<hr />
+
+![tags monitor](https://raw.githubusercontent.com/fedeghe/web-page-monitor/master/img/view.png)
+
+<div>
+    <details>
+        <summary>VIEW options</summary>
+        <div>Shows viewport size, body size and scrolling values.</div>
     </details>
 </div>
 
