@@ -62,7 +62,7 @@ WebPageMonitor
     .showTAGS(/* options */)
     .showEVENTS(/* options */)
     .showNET(/* options */)
-    .render(/* where, default body */);
+    .render({where: document.body /* default is body */, collapsible: true /* default false */});
 ```
 
 if You want to render elsewhere just pass `{where: YourTargetNode}` when calling _render_.
@@ -141,6 +141,16 @@ if You want to render elsewhere just pass `{where: YourTargetNode}` when calling
     frequency: 10 // the frequency of the update, default is 1
 }</pre>
         </div>
+    </details>
+</div>
+<hr />
+
+![tags monitor](https://raw.githubusercontent.com/fedeghe/web-page-monitor/master/img/view.png)
+
+<div>
+    <details>
+        <summary>VIEW options</summary>
+        <div>Shows viewport size, body size and scrolling values.</div>
     </details>
 </div>
 <hr />
