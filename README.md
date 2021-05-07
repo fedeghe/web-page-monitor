@@ -4,7 +4,7 @@
 
 ## Try it
 
-Create a bookmarklet on your browser (and then try it where policies allows you to)  using the following:
+Create a bookmarklet on your browser (and then try it where policies allows you to)  using the following: 
 
 <details>
     <summary>click here to show the ready to use <strong>bookmarklet</strong> (no options)</summary>
