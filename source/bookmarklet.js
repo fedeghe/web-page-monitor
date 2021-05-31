@@ -12,25 +12,28 @@
     var url = "https://cdn.jsdelivr.net/npm/web-page-monitor@0.0.14/dist/index.js",
         script = document.createElement('script');
     script.onload = function() {
-        WebPageMonitor
-            .showNET()
-            .showFPS()
-            .showMEM({
-                height: 30,
-            })
-            .showTAGS({
-                frequency: 10,
-            })
-            .showEVENTS({
-                frequency: 10,
-                exclude: [
-                    'onmousemove',
-                ]
-            })
-            .showVIEW()
-            .render({
-                collapsible: true
-            });
+        var already = document.querySelectorAll('.monitor-panel, .monitor-panel-hidden').length
+        if (!already) {
+            WebPageMonitor
+                .showNET()
+                .showFPS()
+                .showMEM({
+                    height: 30,
+                })
+                .showTAGS({
+                    frequency: 10,
+                })
+                .showEVENTS({
+                    frequency: 10,
+                    exclude: [
+                        'onmousemove',
+                    ]
+                })
+                .showVIEW()
+                .render({
+                    collapsible: true
+                });
+        }
     };
     script.setAttribute('src', url);
     document.getElementsByTagName('head').item(0).appendChild(script);
