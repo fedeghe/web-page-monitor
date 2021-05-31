@@ -9,7 +9,7 @@
             }
         });
 
-    var url = "https://cdn.jsdelivr.net/npm/web-page-monitor@0.0.14/dist/index.js",
+    var url = "https://cdn.jsdelivr.net/npm/web-page-monitor@0.0.15/dist/index.js",
         script = document.createElement('script');
     script.onload = function() {
         var already = document.querySelectorAll('.monitor-panel, .monitor-panel-hidden').length
