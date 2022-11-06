@@ -1,7 +1,6 @@
 import BaseMonitor from './BaseMonitor';
 import { extend, createNode, appendTo, view } from './utils';
 
-extend(VIEWmonitor, BaseMonitor);
 
 function VIEWmonitor() {
     this.$panel = createNode('div', {
@@ -35,5 +34,6 @@ function VIEWmonitor() {
 
 }
 
+extend(VIEWmonitor, BaseMonitor);
 
 export default VIEWmonitor;

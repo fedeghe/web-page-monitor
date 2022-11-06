@@ -34,5 +34,7 @@ function TAGSmonitor(options = {}, monitor) {
         cnv.add(totalBody);
     }, options.frequency ? 1000 / options.frequency : 1000);
 }
+
 extend(TAGSmonitor, BaseMonitor);
+
 export default TAGSmonitor;

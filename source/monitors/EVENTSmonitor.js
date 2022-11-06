@@ -1,8 +1,6 @@
 import BaseMonitor from './BaseMonitor';
 import {extend, createNode, appendTo} from './utils';
 import Canvas from './canvas';
-
-extend(EVENTSmonitor, BaseMonitor);
 function EVENTSmonitor(options = {}){
     var self = this;
     this.min = Infinity;
@@ -54,6 +52,6 @@ EVENTSmonitor.prototype.listen = function () {
     });
 }
 
-
+extend(EVENTSmonitor, BaseMonitor);
 
 export default EVENTSmonitor;

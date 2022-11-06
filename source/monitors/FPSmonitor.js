@@ -30,5 +30,7 @@ function FPSmonitor(options = {}){
         });
     })();
 }
+
 extend(FPSmonitor, BaseMonitor);
+
 export default FPSmonitor;

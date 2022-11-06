@@ -27,5 +27,7 @@ function MEMmonitor(options = {}){
     }, options.frequency ? 1000 / options.frequency : 1000);
 
 }
+
 extend(MEMmonitor, BaseMonitor);
+
 export default MEMmonitor;
