@@ -2,6 +2,8 @@ import BaseMonitor from './BaseMonitor';
 import {extend, createNode, appendTo} from './utils';
 import Canvas from './canvas';
 
+extend(FPSmonitor, BaseMonitor);
+
 function FPSmonitor(options = {}){
     this.$panel = createNode('div', {
         className: 'x-panel',
@@ -31,6 +33,5 @@ function FPSmonitor(options = {}){
     })();
 }
 
-extend(FPSmonitor, BaseMonitor);
 
 export default FPSmonitor;

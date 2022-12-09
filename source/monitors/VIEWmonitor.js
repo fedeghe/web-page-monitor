@@ -1,6 +1,7 @@
 import BaseMonitor from './BaseMonitor';
 import { extend, createNode, appendTo, view } from './utils';
 
+extend(VIEWmonitor, BaseMonitor);
 
 function VIEWmonitor() {
     this.$panel = createNode('div', {
@@ -31,9 +32,6 @@ function VIEWmonitor() {
         scrolling = view.scroll();
         $bodyScroll.innerHTML = getScrolling();
     })
-
 }
-
-extend(VIEWmonitor, BaseMonitor);
 
 export default VIEWmonitor;

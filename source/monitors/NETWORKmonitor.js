@@ -5,6 +5,8 @@ import {
     appendTo
 } from './utils';
 
+extend(NETWORKmonitor, BaseMonitor);
+
 function NETWORKmonitor(options = {}) {
     this.$panel = createNode('div', {
         className: 'x-panel',
@@ -24,6 +26,5 @@ function NETWORKmonitor(options = {}) {
 
 }
 
-extend(NETWORKmonitor, BaseMonitor);
 
 export default NETWORKmonitor;

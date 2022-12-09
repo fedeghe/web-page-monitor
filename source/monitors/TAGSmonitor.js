@@ -1,7 +1,9 @@
 import BaseMonitor from './BaseMonitor';
 import {extend, createNode, appendTo} from './utils';
-
 import Canvas from './canvas';
+
+extend(TAGSmonitor, BaseMonitor);
+
 function TAGSmonitor(options = {}, monitor) {
     this.$panel = createNode('div', {
         className: 'x-panel',
@@ -35,6 +37,5 @@ function TAGSmonitor(options = {}, monitor) {
     }, options.frequency ? 1000 / options.frequency : 1000);
 }
 
-extend(TAGSmonitor, BaseMonitor);
 
 export default TAGSmonitor;

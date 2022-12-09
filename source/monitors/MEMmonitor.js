@@ -2,6 +2,8 @@ import BaseMonitor from './BaseMonitor';
 import {extend, createNode, appendTo} from './utils';
 import Canvas from './canvas'
 
+extend(MEMmonitor, BaseMonitor);
+
 function MEMmonitor(options = {}){
     this.$panel = createNode('div', {
         className: 'x-panel MEMmonitor',
@@ -28,6 +30,5 @@ function MEMmonitor(options = {}){
 
 }
 
-extend(MEMmonitor, BaseMonitor);
 
 export default MEMmonitor;
