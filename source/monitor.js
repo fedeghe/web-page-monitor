@@ -28,7 +28,7 @@ Monitor.prototype.addPanel = function(type, options) {
 
 Monitor.prototype.render = function({
     where = document.body,
-    collapsible,
+    collapsible = false,
     opacity = 1
 }) {
     var self = this;

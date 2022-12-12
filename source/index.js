@@ -2,14 +2,20 @@ import Monitor from './Monitor'
 import './style.less'
 
 (function() {
+    function getPanelInjector (lab) {
+        return function(options) {
+            m.addPanel(lab, options);
+            return out;
+        }
+    }
     var m = new Monitor(),
         out = {
-            showFPS: options => { m.addPanel('fps', options); return out; },
-            showMEM: options => { m.addPanel('mem', options); return out; },
-            showTAGS: options => { m.addPanel('tags', options); return out; },
-            showEVENTS: options => { m.addPanel('events', options); return out; },
-            showNET: options => { m.addPanel('net', options); return out; },
-            showVIEW: options => { m.addPanel('view', options); return out; },
+            showFPS: getPanelInjector('fps'),
+            showMEM: getPanelInjector('mem'),
+            showTAGS: getPanelInjector('tags'),
+            showEVENTS: getPanelInjector('events'),
+            showNET: getPanelInjector('net'),
+            showVIEW: getPanelInjector('view'),
             render: (options = {}) => m.render(options),
         };
     window.WebPageMonitor = out;

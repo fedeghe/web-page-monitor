@@ -17,6 +17,7 @@ function Canvas({width, height, options}) {
     this.normalized = [];
     this.max = 0;
 }
+
 Canvas.prototype.clear = function () {
     this.ctx.fillRect(0, 0, this.width, this.height);
 };
@@ -24,6 +25,7 @@ Canvas.prototype.clear = function () {
 Canvas.prototype.normalize = function (value) {
     return this.max ? value * this.height / this.max : this.height;
 };
+
 Canvas.prototype.add = function (value) {
     this.data.push(value);
 
@@ -44,9 +46,11 @@ Canvas.prototype.add = function (value) {
     this.normalized = this.normalized.slice(beginSlice);
     this.render();
 };
+
 Canvas.prototype.getTag = function () {
     return this.tag;
 };
+
 Canvas.prototype.render = function () {
     var self = this;
     this.clear();

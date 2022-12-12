@@ -76,18 +76,19 @@ const view = {
             Math.max(body.scrollHeight, body.offsetHeight, html.clientHeight, html.scrollHeight, html.offsetHeight)
         ];
     },
+    pint : function(n) {return parseInt(n, 10);},
     scroll: function() {
         return {
-            left: view.f_filterResults(
+            left: view.pint(view.f_filterResults(
                 w.pageXOffset ? w.pageXOffset : 0,
                 wde ? wde.scrollLeft : 0,
                 wdb ? wdb.scrollLeft : 0
-            ),
-            top: view.f_filterResults(
+            )),
+            top: view.pint(view.f_filterResults(
                 w.pageYOffset ? w.pageYOffset : 0,
                 wde ? wde.scrollTop : 0,
                 wdb ? wdb.scrollTop : 0
-            )
+            ))
         };
     },
     f_filterResults: function(nWin, nDocel, nBody) {
