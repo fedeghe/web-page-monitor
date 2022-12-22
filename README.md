@@ -194,6 +194,7 @@ onsearch, onappinstalled, onbeforeinstallprompt, onabort, onblur, oncancel, onca
         <div>Shows viewport size, body size and scrolling values.</div>
     </details>
 </div>
+<hr />
 
 
 ![tags monitor](https://raw.githubusercontent.com/fedeghe/web-page-monitor/master/img/load.png)
