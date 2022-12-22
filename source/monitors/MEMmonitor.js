@@ -1,5 +1,5 @@
 import BaseMonitor from './BaseMonitor';
-import {extend, createNode, appendTo} from './utils';
+import {extend, createNode, appendTo, getFrequency} from './utils';
 import Canvas from './canvas'
 
 extend(MEMmonitor, BaseMonitor);
@@ -26,7 +26,7 @@ function MEMmonitor(options = {}){
         $limit.innerHTML = `Limit: ${(performance.memory.jsHeapSizeLimit / factor).toFixed(2)}MB`;
         cnvTotal.add(total);
         cnvUsed.add(used);
-    }, options.frequency ? 1000 / options.frequency : 1000);
+    }, getFrequency(options.frequency));
 
 }
 

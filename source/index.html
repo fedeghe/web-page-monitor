@@ -56,6 +56,13 @@
                 .showNET()
                 .showFPS()
                 .showVIEW()
+                .showLOAD({
+                    elements: [
+                        'domInteractive',
+                        'domContentLoadedEventStart',
+                        'domComplete',
+                    ]
+                })
                 .showMEM({
                     height: 30,
                 })

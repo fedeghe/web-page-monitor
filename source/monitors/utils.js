@@ -1,3 +1,5 @@
+import loadEventsMap from './loadEventsMap.json'
+
 function extend(Child, Parent) {
     function T() {}
     T.prototype = Parent.prototype;
@@ -35,11 +37,18 @@ function createNode(tag, {
     return n
 }
 
+// retruns the parent
 function appendTo(node, childs) {
     childs.forEach(child => {
         node.appendChild(child)
     })
+    return node
 }
+
+function getFrequency(f) {
+    return f ? 1000 / f : 1000
+}
+
 const w = window,
     wd = w.document,
     wdb = wd.body,
@@ -98,10 +107,22 @@ const view = {
         }
         return nBody && (!nResult || (nResult > nBody)) ? nBody : nResult;
     },
+    getLoadTimes : function (els) {
+        var first,
+            shown = els || [];
+        return Object.entries(loadEventsMap).map(([key, label]) => {
+            var p = performance.timing[key];
+            first = first || p;
+            return (!isNaN(p) && p) ? [key, label, p-first] : false;
+        })
+        .filter(e => e && shown.includes(e[0]))
+        .sort((a, b) => a[2] - b[2]);
+    }
 }
 export {
     extend,
     createNode,
     appendTo,
-    view
+    view,
+    getFrequency,
 }

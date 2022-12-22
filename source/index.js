@@ -16,6 +16,7 @@ import './style.less'
             showEVENTS: getPanelInjector('events'),
             showNET: getPanelInjector('net'),
             showVIEW: getPanelInjector('view'),
+            showLOAD: getPanelInjector('load'),
             render: (options = {}) => m.render(options),
         };
     window.WebPageMonitor = out;

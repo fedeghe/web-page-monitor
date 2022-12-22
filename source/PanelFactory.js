@@ -4,6 +4,7 @@ import MEMmonitor from './monitors/MEMmonitor';
 import EVENTSmonitor from './monitors/EVENTSmonitor';
 import NETWORKmonitor from './monitors/NETWORKmonitor';
 import VIEWmonitor from './monitors/VIEWmonitor';
+import LOADmonitor from './monitors/LOADmonitor';
 
 var PanelFactory = (type, params, monitor) => {
 
@@ -20,6 +21,8 @@ var PanelFactory = (type, params, monitor) => {
             return new EVENTSmonitor(params, monitor);
         case 'view':
             return new VIEWmonitor(params, monitor);
+        case 'load':
+            return new LOADmonitor(params, monitor);
         default:
             return null;
     }

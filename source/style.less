@@ -63,10 +63,27 @@
         color:greenyellow;
         background-color: rgba(0,0,0,0.8);
     }
-    .MEMmonitor, .VIEWmonitor {
+    .MEMmonitor, .VIEWmonitor, .LOADmonitor {
         ul {
             padding:0;
             margin:0;
+        }
+    }
+    .LOADmonitor {
+        max-height:200px;
+        overflow: scroll;
+        pointer-events:all;
+        word-wrap: none;
+        line-break: none;
+        .loadMonitorItem{
+            height:1.2em;
+        }
+        .loadMonitorLabel{
+            padding-right: 5px;
+        }
+        .loadMonitorValue{
+            font-weight: bolder;
+            color:white;
         }
     }
     ul {

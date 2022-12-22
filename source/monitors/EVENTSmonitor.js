@@ -1,5 +1,5 @@
 import BaseMonitor from './BaseMonitor';
-import {extend, createNode, appendTo} from './utils';
+import {extend, createNode, appendTo, getFrequency} from './utils';
 import Canvas from './canvas';
 
 extend(EVENTSmonitor, BaseMonitor);
@@ -32,7 +32,7 @@ function EVENTSmonitor(options = {}){
         self.$max.innerHTML = `Max: ${self.max}`;
         self.events = [];
         cnv.add(actual);
-    }, options.frequency ? 1000 / options.frequency : 1000);
+    }, getFrequency(options.frequency));
 
 }
 

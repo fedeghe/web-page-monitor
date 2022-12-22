@@ -35,6 +35,13 @@ which comes from the following:
             .showMEM({
                 height: 30,
             })
+            .showLOAD({
+                elements: [
+                    'domInteractive',
+                    'domContentLoadedEventStart',
+                    'domComplete',
+                ]
+            })
             .showTAGS({
                 frequency: 10,
             })
@@ -70,6 +77,7 @@ WebPageMonitor
     .showMEM(/* options */)
     .showTAGS(/* options */)
     .showEVENTS(/* options */)
+    .showLOAD(/* options */)
     .showNET(/* options */)
     .showVIEW()
     .render({where: document.body /* default is body */, collapsible: true /* default false */});
@@ -168,7 +176,7 @@ if You want to render elsewhere just pass `{where: YourTargetNode}` when calling
     frequency: 10 // the frequency of the update, default is 1,
     exclude: ['onmousemove'] // exclude one or more events, there are a lot
 }</pre>
-            <p>just to have an idea tehe following are those possible on webkit</p>
+            <p>just to have an idea the following are those possible on webkit</p>
         <pre style="font-size:0.7em">
 onsearch, onappinstalled, onbeforeinstallprompt, onabort, onblur, oncancel, oncanplay, oncanplaythrough, onchange, onclick, onclose, oncontextmenu, oncuechange, ondblclick, ondrag, ondragend, ondragenter, ondragleave, ondragover, ondragstart, ondrop, ondurationchange, onemptied, onended, onerror, onfocus, onformdata, oninput, oninvalid, onkeydown, onkeypress, onkeyup, onload, onloadeddata, onloadedmetadata, onloadstart, onmousedown, onmouseenter, onmouseleave, onmousemove, onmouseout, onmouseover, onmouseup, onmousewheel, onpause, onplay, onplaying, onprogress, onratechange, onreset, onresize, onscroll, onseeked, onseeking, onselect, onstalled, onsubmit, onsuspend, ontimeupdate, ontoggle, onvolumechange, onwaiting, onwebkitanimationend, onwebkitanimationiteration, onwebkitanimationstart, onwebkittransitionend, onwheel, onauxclick, ongotpointercapture, onlostpointercapture, onpointerdown, onpointermove, onpointerup, onpointercancel, onpointerover, onpointerout, onpointerenter, onpointerleave, onselectstart, onselectionchange, onanimationend, onanimationiteration, onanimationstart, ontransitionrun, ontransitionstart, ontransitionend, ontransitioncancel, onafterprint, onbeforeprint, onbeforeunload, onhashchange, onlanguagechange, onmessage, onmessageerror, onoffline, ononline, onpagehide, onpageshow, onpopstate, onrejectionhandled, onstorage, onunhandledrejection, onunload, ondevicemotion, ondeviceorientation, ondeviceorientationabsolute, onpointerrawupdate
         </pre> 
@@ -184,6 +192,20 @@ onsearch, onappinstalled, onbeforeinstallprompt, onabort, onblur, oncancel, onca
     <details>
         <summary>VIEW options</summary>
         <div>Shows viewport size, body size and scrolling values.</div>
+    </details>
+</div>
+
+
+![tags monitor](https://raw.githubusercontent.com/fedeghe/web-page-monitor/master/img/load.png)
+
+<div>
+    <details>
+        <summary>Load options</summary>
+        <div>Shows browser metrics from `performance.timing`.</div>
+        <p>all the following are available</p>
+        <pre style="font-size:0.7em">
+navigationStart, unloadEventStart, unloadEventEnd, redirectStart, redirectEnd, fetchStart, domainLookupStart, domainLookupEnd, connectStart, connectEnd, secureConnectionStart, requestStart, responseStart, responseEnd, domLoading, domInteractive, domContentLoadedEventStart, domContentLoadedEventEnd, domComplete, loadEventStart, loadEventEnd
+        </pre> 
     </details>
 </div>
 

@@ -2,7 +2,8 @@ import BaseMonitor from './BaseMonitor';
 import {
     extend,
     createNode,
-    appendTo
+    appendTo,
+    getFrequency
 } from './utils';
 
 extend(NETWORKmonitor, BaseMonitor);
@@ -22,7 +23,7 @@ function NETWORKmonitor(options = {}) {
         var entries = performance.getEntries(),
             total = entries.reduce((acc, entry) => acc + (entry.transferSize || 0), 0);
         $total.innerHTML = `Total: ${(total / factor).toFixed(2)} MB`;
-    }, options.frequency ? 1000 / options.frequency : 1000);
+    }, getFrequency(options.frequency));
 
 }
 

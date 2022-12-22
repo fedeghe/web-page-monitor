@@ -1,0 +1,23 @@
+{
+    "navigationStart": "navigationStart",
+    "unloadEventStart": "unloadEventStart",
+    "unloadEventEnd": "unloadEventEnd",
+    "redirectStart": "redirectStart",
+    "redirectEnd": "redirectEnd",
+    "fetchStart": "fetchStart",
+    "domainLookupStart": "domainLookupStart",
+    "domainLookupEnd": "domainLookupEnd",
+    "connectStart": "connectStart",
+    "connectEnd": "connectEnd",
+    "secureConnectionStart": "secureConnectionStart",
+    "requestStart": "requestStart",
+    "responseStart": "responseStart",
+    "responseEnd": "responseEnd",
+    "domLoading": "domLoading",
+    "domInteractive": "interactive",
+    "domContentLoadedEventStart": "loaded",
+    "domContentLoadedEventEnd": "domContentLoadedEventEnd",
+    "domComplete": "complete",
+    "loadEventStart": "loadEventStart",
+    "loadEventEnd": "loadEventEnd"
+}

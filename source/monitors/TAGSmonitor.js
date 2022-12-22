@@ -1,5 +1,5 @@
 import BaseMonitor from './BaseMonitor';
-import {extend, createNode, appendTo} from './utils';
+import {extend, createNode, appendTo, getFrequency} from './utils';
 import Canvas from './canvas';
 
 extend(TAGSmonitor, BaseMonitor);
@@ -34,7 +34,7 @@ function TAGSmonitor(options = {}, monitor) {
         $num.innerHTML = `body ${totalBody}`;
         $density.innerHTML = `∂ ${density}`
         cnv.add(totalBody);
-    }, options.frequency ? 1000 / options.frequency : 1000);
+    }, getFrequency(options.frequency));
 }
 
 
