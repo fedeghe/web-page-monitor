@@ -7,25 +7,16 @@ import VIEWmonitor from './monitors/VIEWmonitor';
 import LOADmonitor from './monitors/LOADmonitor';
 
 var PanelFactory = (type, params, monitor) => {
-
-    switch (type) {
-        case 'fps':
-            return new FPSmonitor(params, monitor);
-        case 'mem':
-            return new MEMmonitor(params, monitor);
-        case 'tags':
-            return new TAGSmonitor(params, monitor);
-        case 'net':
-            return new NETWORKmonitor(params, monitor);
-        case 'events':
-            return new EVENTSmonitor(params, monitor);
-        case 'view':
-            return new VIEWmonitor(params, monitor);
-        case 'load':
-            return new LOADmonitor(params, monitor);
-        default:
-            return null;
-    }
+    var Constructor = {
+        fps: FPSmonitor,
+        mem: MEMmonitor,
+        tags: TAGSmonitor,
+        net: NETWORKmonitor,
+        events: EVENTSmonitor,
+        view: VIEWmonitor,
+        load: LOADmonitor,
+    }[type] || null;
+    return Constructor && new Constructor(params, monitor);
 };
 
 export default PanelFactory
