@@ -9,6 +9,7 @@ module.exports = {
   output: {
     path: path.resolve(__dirname, './dist'),
     filename: '[name].js',
+    hashFunction: 'sha256'
   },
   devtool: 'inline-source-map',
   plugins: [
@@ -42,7 +43,9 @@ module.exports = {
   },
 
   devServer: {
-    contentBase: path.resolve(__dirname, './dist'),
+    static : {
+        directory:path.resolve(__dirname, './dist'),
+    },
     compress: true,
     port: 9000,
     hot:true,
