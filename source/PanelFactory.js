@@ -7,16 +7,21 @@ import VIEWmonitor from './monitors/VIEWmonitor';
 import LOADmonitor from './monitors/LOADmonitor';
 
 var PanelFactory = (type, params, monitor) => {
-    var Constructor = {
+    var Constructors = {
         fps: FPSmonitor,
-        mem: MEMmonitor,
         tags: TAGSmonitor,
         net: NETWORKmonitor,
         events: EVENTSmonitor,
         view: VIEWmonitor,
         load: LOADmonitor,
-    }[type] || null;
-    return Constructor && new Constructor(params, monitor);
+    }
+    if ('performance' in window &&  'memory' in performance){
+        Constructors.mem = MEMmonitor
+    }
+
+    return type in Constructors
+        ? new Constructors[type](params, monitor)
+        : null;
 };
 
 export default PanelFactory

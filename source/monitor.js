@@ -31,6 +31,7 @@ Monitor.prototype.render = function({
     collapsible = false,
     opacity = 1
 }) {
+
     var self = this;
     this.container.innerHTML = '';
     this.container.style.opacity = opacity;
