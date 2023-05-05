@@ -1,6 +1,7 @@
+@size: 2rem; 
 .monitor-panel-hidden {
     position: fixed;
-    bottom: 1px;
+    bottom: 0px;
     right: 0px;
     font-family:monospace;
     z-index: 9999;
@@ -8,17 +9,24 @@
         display:none
     }
     .monitor-panel-toggler-hidden {
-        width:20px;
-        height:20px;
+        width:@size;
+        height:@size;
+        line-height:@size;
         position:absolute;
         right:0px;
-        bottom:8px;
-        font-size:20px;
+        bottom:0px;
+        font-size:@size;
+        text-align:center;
+        filter:opacity(0.5);
         &::after {
             content: '◤';
             cursor: pointer;
             color:green;
-            cursor:pointer
+            cursor:pointer;
+            display:block;
+        }
+        &:hover {
+            filter:opacity(1);
         }
     }
 }
@@ -27,17 +35,20 @@
     pointer-events:none;
     .monitor-panel-toggler {
         pointer-events:all;
-        width:20px;
-        height:20px;
+        width:@size;
+        height:@size;
+        line-height:@size;
         position:absolute;
         right:0px;
-        bottom:8px;
-        font-size:20px;
+        bottom:0px;
+        font-size:@size;
+        text-align:center;
         &::after {
             content: '◢';
             cursor: pointer;
             color:red;
-            cursor:pointer
+            cursor:pointer;
+            display:block;
         }
     }
 
@@ -47,7 +58,7 @@
     width: 150px;
     background-color: rgba(0,0,0,0.5);
     z-index:1000;
-    padding:5px;
+    padding:6px;
     padding-bottom:0px;
     border-top-left-radius:6px;
     font-family:monospace;
@@ -58,8 +69,8 @@
     box-sizing: initial;
     .x-panel {
         border-radius:3px;
-        margin-bottom:5px;
-        padding:5px;
+        margin-bottom:6px;
+        padding:6px;
         color:greenyellow;
         background-color: rgba(0,0,0,0.8);
     }
@@ -79,7 +90,7 @@
             height:1.2em;
         }
         .loadMonitorLabel{
-            padding-right: 5px;
+            padding-right: 6px;
         }
         .loadMonitorValue{
             font-weight: bolder;
@@ -90,7 +101,7 @@
         list-style: none
     }
     .title {
-        margin-bottom:5px;
+        margin-bottom:6px;
         display: inline-block;
         font-weight:bold
     }
