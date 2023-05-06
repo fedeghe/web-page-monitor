@@ -3,27 +3,27 @@
     position: fixed;
     bottom: 0px;
     right: 0px;
-    font-family:monospace;
+    font-family: monospace;
     z-index: 9999;
     .x-panel {
-        display:none
+        display: none
     }
     .monitor-panel-toggler-hidden {
-        width:@size;
-        height:@size;
-        line-height:@size;
-        position:absolute;
-        right:0px;
-        bottom:0px;
-        font-size:@size;
-        text-align:center;
-        filter:opacity(0.5);
+        width: @size;
+        height: @size;
+        line-height: @size;
+        position: absolute;
+        right: 0px;
+        bottom: 0px;
+        font-size: @size;
+        text-align: center;
+        filter: opacity(0.5);
         &::after {
             content: '◤';
             cursor: pointer;
-            color:green;
-            cursor:pointer;
-            display:block;
+            color: green;
+            cursor: pointer;
+            display: block;
         }
         &:hover {
             filter:opacity(1);
@@ -32,23 +32,22 @@
 }
 
 .monitor-panel {
-    pointer-events:none;
+    pointer-events: none;
     .monitor-panel-toggler {
-        pointer-events:all;
-        width:@size;
-        height:@size;
-        line-height:@size;
-        position:absolute;
-        right:0px;
-        bottom:0px;
-        font-size:@size;
-        text-align:center;
+        pointer-events: all;
+        width: @size;
+        height: @size;
+        line-height: @size;
+        position: absolute;
+        right: 0px;
+        bottom: 0px;
+        font-size: @size;
+        text-align: center;
         &::after {
             content: '◢';
             cursor: pointer;
             color:red;
-            cursor:pointer;
-            display:block;
+            display: block;
         }
     }
 
@@ -57,60 +56,60 @@
     right: 0px;
     width: 150px;
     background-color: rgba(0,0,0,0.5);
-    z-index:1000;
-    padding:6px;
-    padding-bottom:0px;
-    border-top-left-radius:6px;
-    font-family:monospace;
-    font-size:12px;
-    display:flex;
+    z-index: 1000;
+    padding: 6px;
+    padding-bottom: 0px;
+    border-top-left-radius: 6px;
+    font-family: monospace;
+    font-size: 12px;
+    display: flex;
     flex-direction: column;
     line-height: 1.6em;
     box-sizing: initial;
     .x-panel {
-        border-radius:3px;
-        margin-bottom:6px;
-        padding:6px;
-        color:greenyellow;
+        border-radius: 3px;
+        margin-bottom: 6px;
+        padding: 6px;
+        color: greenyellow;
         background-color: rgba(0,0,0,0.8);
     }
     .MEMmonitor, .VIEWmonitor, .LOADmonitor {
         ul {
-            padding:0;
-            margin:0;
+            padding: 0;
+            margin: 0;
         }
     }
     .LOADmonitor {
-        max-height:200px;
+        max-height: 200px;
         overflow: scroll;
-        pointer-events:all;
+        pointer-events: all;
         word-wrap: none;
         line-break: none;
         .loadMonitorItem{
-            height:1.2em;
+            height: 1.2em;
         }
         .loadMonitorLabel{
             padding-right: 6px;
         }
         .loadMonitorValue{
             font-weight: bolder;
-            color:white;
+            color: white;
         }
     }
     ul {
         list-style: none
     }
     .title {
-        margin-bottom:6px;
+        margin-bottom: 6px;
         display: inline-block;
-        font-weight:bold
+        font-weight: bold
     }
     .flexi {
-        display:flex;
+        display: flex;
         justify-content: space-between;
     }
     .event{
-        pointer-events:all;
+        pointer-events: all;
         &::after {
             content: '⁕';
             cursor: pointer
